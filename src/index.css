@@ -1,0 +1,23 @@
+:root {
+  /* Colours */
+  --neutral-white: #fff;
+  --neutral-black: #000;
+
+  --error-red: hsba(349, 100%, 69%, 1);
+  --success-green: hsba(145, 100%, 78%, 1);
+
+  --primary-gold-100: hsba(48, 30%, 97%, 1);
+  --primary-gold: hsba(48, 51%, 95%, 1);
+  --primary-gold-300: hsba(49, 75%, 93%, 1);
+  --primary-gold-400: hsba(49, 100%, 91%, 1);
+
+  --secondary-colour-50: hsba(339, 11%, 100%, 1);
+  --secondary-colour: hsba(338, 29%, 100%, 1);
+  --secondary-colour-300: hsba(337, 70%, 99%, 1);
+  --secondary-colour-400: hsba(333, 94%, 96%, 1);
+
+  /* Font Family */
+  --hero-font: Cinzel;
+  --body-font: Playfair Display;
+  --special-message-font: Pinyon Script;
+}

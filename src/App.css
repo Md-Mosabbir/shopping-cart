@@ -1,0 +1,109 @@
+.special-message {
+  color: var(--neutral-black);
+  font-family: var(--special-message-font);
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.01rem;
+  position: absolute;
+  top: 28%;
+  left: 2%;
+  writing-mode: vertical-lr;
+  scale: -1;
+}
+
+.hero {
+  max-width: 100rem;
+  padding-top: 9rem;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.hero-img-container {
+  background-color: var(--primary-gold);
+  box-shadow: var(--12-dp-penumbra);
+  border-radius: 50%;
+  width: 24.25rem;
+  height: 24.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.hero-img-container img {
+  width: 26.96319rem;
+  aspect-ratio: 1/1;
+}
+
+.hero-title {
+  color: var(--neutral-black, #000);
+  font-family: var(--hero-font);
+  font-size: 2.875rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 133.3%; /* 3.83238rem */
+  letter-spacing: 0.02875rem;
+
+  max-width: 41.6875rem;
+  max-height: 6.9375rem;
+}
+
+.hero-text h3 {
+  color: var(--neutral-black, #000);
+  font-family: Playfair Display;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.015rem;
+  margin-top: 1rem;
+}
+
+.hero-text button {
+  background-color: var(--primary-gold);
+  border: none;
+  color: var(--neutral-black);
+  font-family: Playfair Display;
+  box-shadow: var(--12-dp-penumbra);
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.015rem;
+
+  width: 12.6875rem;
+  height: 4rem;
+  margin-top: 3rem;
+  cursor: pointer;
+}
+
+.mesh-gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+      to right,
+      var(--secondary-colour-300),
+      transparent
+    ),
+    linear-gradient(to bottom, var(--primary-gold), transparent),
+    linear-gradient(to bottom right, var(--secondary-colour), transparent);
+  background-size:
+    100% 40%,
+    20% 100%,
+    100% 60%;
+  background-position:
+    0 0,
+    100% 0,
+    100% 100%;
+  background-repeat: no-repeat;
+  width: 100%;
+  bottom: 0;
+  top: 0;
+  z-index: -1;
+  filter: blur(400px);
+}

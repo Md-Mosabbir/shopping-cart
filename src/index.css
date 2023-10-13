@@ -1,3 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel&family=Pinyon+Script&display=swap');
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+
 :root {
   /* Colours */
   --neutral-white: #fff;
@@ -7,17 +19,30 @@
   --success-green: hsba(145, 100%, 78%, 1);
 
   --primary-gold-100: hsba(48, 30%, 97%, 1);
-  --primary-gold: hsba(48, 51%, 95%, 1);
-  --primary-gold-300: hsba(49, 75%, 93%, 1);
-  --primary-gold-400: hsba(49, 100%, 91%, 1);
+  --primary-gold: #f1d976;
+  --primary-gold-300: #eccb3c;
+  --primary-gold-400: #e9be00;
 
   --secondary-colour-50: hsba(339, 11%, 100%, 1);
-  --secondary-colour: hsba(338, 29%, 100%, 1);
-  --secondary-colour-300: hsba(337, 70%, 99%, 1);
+  --secondary-colour: #ffb5d0;
+  --secondary-colour-300: #fc4b90;
   --secondary-colour-400: hsba(333, 94%, 96%, 1);
 
   /* Font Family */
-  --hero-font: Cinzel;
+  --hero-font: Cinzel, serif;
   --body-font: Playfair Display;
   --special-message-font: Pinyon Script;
+
+  /* 12-dp-penumbra Box Shadow */
+  --12-dp-penumbra: 0px 5px 22px 4px rgba(0, 0, 0, 0.12);
+  --12-dp-ambient-shadow: 0px 7px 8px 0px rgba(0, 0, 0, 0.2);
+}
+
+body {
+  height: 100vh;
+  height: 100dvh;
+}
+
+.active {
+  color: var(--primary-gold-400) !important;
 }

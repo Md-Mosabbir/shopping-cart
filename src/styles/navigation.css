@@ -1,0 +1,34 @@
+.navigation-bar {
+  background-color: transparent;
+  display: flex;
+  justify-content: space-between;
+  max-width: 100rem;
+  margin: 0 auto;
+  align-items: center;
+  gap: 4.06rem;
+  padding-block: 0.5rem;
+}
+.nav-container {
+  border-bottom: 1px solid var(--neutral-black);
+}
+
+.nav-option-first ul li a,
+.nav-option-second ul li a {
+  color: #000;
+  font-family: Playfair Display;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.015rem;
+}
+
+.nav-option-first ul,
+.nav-option-second ul {
+  display: flex;
+  align-items: center;
+  gap: 6rem;
+}
+.content {
+  height: 100%;
+}

@@ -3,24 +3,33 @@ import './index.css'
 import ReactDOM from 'react-dom/client'
 
 import Root from './components/Root.jsx'
-import Shop from './components/Shop'
+import Shop, { shoppingLoader } from './components/Shop'
 
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import ProductDetails, { itemDetailsLoader } from './components/productDetails'
+
+import {
+  createBrowserRouter,
+  createRoutesFromElements,
+  Route,
+  RouterProvider,
+} from 'react-router-dom'
 import App from './App'
 
-const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <Root />,
-    children: [
-      { index: true, element: <App /> },
-      {
-        path: '/shop',
-        element: <Shop />,
-      },
-    ],
-  },
-])
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path="/" element={<Root />}>
+      <Route index element={<App />} />
+      <Route path="shop" element={<Shop />} loader={shoppingLoader}>
+        <Route
+          path=":id"
+          element={<ProductDetails />}
+          loader={itemDetailsLoader}
+        />
+      </Route>
+    </Route>,
+  ),
+)
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <RouterProvider router={router} />

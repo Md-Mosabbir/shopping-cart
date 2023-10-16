@@ -6,6 +6,7 @@
   flex-wrap: wrap;
   gap: 4.81rem;
   margin-block: 2rem;
+  background-color: transparent;
 }
 
 .product-cards {
@@ -71,4 +72,12 @@
   border-radius: 50%;
   border: none;
   background-color: var(--neutral-black);
+}
+
+.like {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 36px;
+  height: 36px;
 }

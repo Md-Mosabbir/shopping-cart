@@ -1,16 +1,11 @@
-import { useState, useEffect } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faHeart } from '@fortawesome/free-regular-svg-icons'
 
 import '../styles/shop.css'
+import { useLoaderData, Link } from 'react-router-dom'
 
 export default function Shop() {
-  const [products, setProducts] = useState([])
-
-  useEffect(() => {
-    fetch('https://fakestoreapi.com/products/category/jewelery')
-      .then((res) => res.json())
-      .then((json) => setProducts(json))
-  }, [])
-
+  const products = useLoaderData()
   return (
     <div className="products">
       {products.map((product) => (
@@ -21,12 +16,29 @@ export default function Shop() {
               <h2>{product.title}</h2>
             </div>
             <div className="product-buttons">
-              <button className="view">View</button>
-              <button className="like">like</button>
+              <Link to={product.id.toString()}>
+                <button className="view">View</button>
+              </Link>
+
+              <button className="like">
+                <FontAwesomeIcon
+                  icon={faHeart}
+                  style={{ color: '#fff', width: '24px', height: '24px' }}
+                />
+              </button>
             </div>
           </div>
         </div>
       ))}
+      <div className="neon-mist-shop"></div>
     </div>
   )
+}
+
+export const shoppingLoader = async () => {
+  const res = await fetch(
+    'https://fakestoreapi.com/products/category/jewelery/',
+  )
+
+  return res.json()
 }

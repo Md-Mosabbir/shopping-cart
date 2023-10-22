@@ -1,11 +1,11 @@
 import Logo from '../assets/svg/Logo.svg'
 import ShoppingBag from '../assets/svg/local_mall.svg'
 import Search from '../assets/svg/search.svg'
-
+import PropTypes from 'prop-types'
 import '../styles/navigation.css'
 
 import { NavLink, Outlet } from 'react-router-dom'
-export default function Root() {
+export default function Root({ displayCart }) {
   return (
     <>
       <div className="nav-container">
@@ -32,9 +32,9 @@ export default function Root() {
                 <a href="#">Contact Us</a>
               </li>
               <li>
-                <a href="#">
+                <button onClick={displayCart}>
                   <img src={ShoppingBag} alt="Shopping bag icon" />
-                </a>
+                </button>
               </li>
               <li>
                 <a href="#">
@@ -50,4 +50,8 @@ export default function Root() {
       </main>
     </>
   )
+}
+
+Root.propTypes = {
+  displayCart: PropTypes.string,
 }

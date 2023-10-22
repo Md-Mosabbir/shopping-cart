@@ -1,0 +1,17 @@
+.products-details {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background-color: red;
+  justify-content: space-around;
+  max-width: 100rem;
+  margin: 6rem auto;
+}
+
+.products-details img {
+  width: 273px;
+  aspect-ratio: 1/1;
+}
+.title-desc {
+  min-width: 500px;
+}

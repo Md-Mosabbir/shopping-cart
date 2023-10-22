@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './index.css'
 import ReactDOM from 'react-dom/client'
 
@@ -14,12 +14,14 @@ import {
   RouterProvider,
 } from 'react-router-dom'
 import App from './App'
+import ShopLayout from './components/ShopLayout'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Root />}>
       <Route index element={<App />} />
-      <Route path="shop" element={<Shop />} loader={shoppingLoader}>
+      <Route path="shop" element={<ShopLayout />}>
+        <Route index element={<Shop />} loader={shoppingLoader} />
         <Route
           path=":id"
           element={<ProductDetails />}

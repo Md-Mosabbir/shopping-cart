@@ -32,3 +32,8 @@
 .content {
   height: 100%;
 }
+
+.nav-option-second ul li button {
+  background-color: transparent;
+  border: none;
+}

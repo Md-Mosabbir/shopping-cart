@@ -1,13 +1,7 @@
-import { useEffect } from 'react'
 import './App.css'
 import heroImage from './assets/images/Hero-Ring.png'
 
-export default function App() {
-  useEffect(() => {
-    fetch('https://fakestoreapi.com/products/category/jewelery')
-      .then((res) => res.json())
-      .then((json) => setProducts(json))
-  }, [])
+export default function App({}) {
   return (
     <div className="main-content">
       <div className="mesh-gradient"></div>
@@ -19,7 +13,7 @@ export default function App() {
       <main className="hero">
         <div className="hero-text">
           <h1 className="hero-title">
-            Capturing Love's Essence, One Ring, Two Hearts
+            Capturing Love&apos;s Essence, One Ring, Two Hearts
           </h1>
           <h3>Forever Yours, Forever Us.</h3>
           <button>Explore</button>

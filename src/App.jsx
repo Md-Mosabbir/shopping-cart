@@ -1,30 +1,39 @@
-import './App.css'
-import heroImage from './assets/images/Hero-Ring.png'
+//React routing
 
-export default function App({}) {
-  return (
-    <div className="main-content">
-      <div className="mesh-gradient"></div>
-      <p className="special-message">
-        Where love shines brighter than diamonds, and hearts find their timeless
-        home
-      </p>
+import {
+  createBrowserRouter,
+  Route,
+  createRoutesFromElements,
+  RouterProvider,
+} from 'react-router-dom'
 
-      <main className="hero">
-        <div className="hero-text">
-          <h1 className="hero-title">
-            Capturing Love&apos;s Essence, One Ring, Two Hearts
-          </h1>
-          <h3>Forever Yours, Forever Us.</h3>
-          <button>Explore</button>
-        </div>
+//Components
+import NavigationBar from './components/NavigationBar'
+import ShopLayout from './components/ShopLayout'
 
-        <div className="hero-image">
-          <div className="hero-img-container">
-            <img src={heroImage} alt="Ring" />
-          </div>
-        </div>
-      </main>
-    </div>
-  )
+//Pages
+import Home from './pages/Home'
+import Shop, { shoppingLoader } from './pages/Shop'
+import ProductDetails, { itemDetailsLoader } from './pages/ProductDetails'
+
+// Routers layout
+
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path="/" element={<NavigationBar />}>
+      <Route index element={<Home />} />
+      <Route path="shop" element={<ShopLayout />}>
+        <Route index element={<Shop />} loader={shoppingLoader} />
+        <Route
+          path=":id"
+          element={<ProductDetails />}
+          loader={itemDetailsLoader}
+        />
+      </Route>
+    </Route>,
+  ),
+)
+
+export default function App() {
+  return <RouterProvider router={router} />
 }
